@@ -6,11 +6,19 @@
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC this is a demo
+# MAGIC this is text
+# MAGIC 
+# MAGIC this is `code`
+# MAGIC 
+# MAGIC # this is a header
 
 # COMMAND ----------
 
 # MAGIC %fs ls /databricks-datasets/Rdatasets/data-001/csv/ggplot2
+
+# COMMAND ----------
+
+dbutils.fs.ls("/databricks-datasets/Rdatasets/data-001/csv/ggplot2")
 
 # COMMAND ----------
 
@@ -75,6 +83,11 @@ diamondsDF.createOrReplaceTempView("diamonds_table")
 # COMMAND ----------
 
 dbutils.widgets.dropdown("cut", "Premium", ["Premium", "Ideal", "Good", "Fair", "Very Good"])
+
+# COMMAND ----------
+
+dbutils.widgets.removeAll()
+
 
 # COMMAND ----------
 
